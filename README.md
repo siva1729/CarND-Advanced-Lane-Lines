@@ -1,5 +1,5 @@
 
-**Advanced Lane Finding Project**
+# **Advanced Lane Finding Project**
 
 The goals / steps of this project are the following:
 
@@ -55,7 +55,7 @@ Using the OpenCV function `cv2.undistort`, images have been undistorted and foll
 
 ![alt text][image21]
 
-#### 2. Creating a Threshold Image
+### 2. Creating a Threshold Image
 For generating the binary thereshold image experiemtned with various combination of color space and gradient thresholds
 as detecting both white and yellow lines under different lighting conditions was a challenge. First converted the image to different color spaces from RGB to HLS, Lab, HSV, etc. to get different attributes of the image color space and then experimented with them.
 Using x gradient helped detect the lines oriented in vertical direction but under low-light conditions (shadows, etc.)
@@ -65,7 +65,7 @@ Lab and Luv color spaces along with x gradient successfully detected the White/Y
 
 ![alt text][image3]
 
-#### 3. Apply Perspective Transform and unwarp the image
+### 3. Apply Perspective Transform and unwarp the image
 
 The code for my perspective transform includes a function called `corners_unwarp()`, which appears in lines 411 through 422 in the file `P4.ipynb` (1st cell of the IPython notebook `P4.ipynb`).  The `corners_unwarp()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
@@ -113,7 +113,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image4]
 
-#### 4. Detect and Draw lines on the image
+### 4. Detect and Draw lines on the image
 Using the binary threshold unwarped image, the lines are detected using a histogram approach. The code for detecting 
 lines is described in the function `find_lines_frame()`. The function takes binary warped threshold image along with 
 window margin width (window to search around histogram detection) and minpix (minimum pixels to consider detection 
@@ -133,7 +133,7 @@ An example of the image with lines plotted is shown below:
 
 ![alt text][image5]
 
-#### 5. Calculation of Radius of Curvature(roc) and line base position (offset from center):
+### 5. Calculation of Radius of Curvature(roc) and line base position (offset from center):
 The radius of curvature and offset is implemented in the lines 625 in function `calc_roc_offset()`. The function
 takes the x and y indices of detected pixels and then fits a polynomial after converting the x and y dimenstions
 to real world space. I assumed the scaling of the image in the x and y dimensions comapred to real world space as
@@ -165,7 +165,7 @@ these distances are averaged to get the offset from center and the left or right
 same function (`calc_roc_offset()`) in the pixel dimensions. Then the value is scaled to real world space using
 xm_per_pix scaling factor.
 
-#### 6. Plotting the detection back to original image.
+### 6. Plotting the detection back to original image.
 
 This is implemented in the `draw_lines()` function that takes undistorted image, binary warped image,  inverse Perspective transform matrix and the fitted lines to draw and fill the area within the lines with color(=GREEN). The function 
 first creates a color warped image and then fills the pixels between the fitted lines with color. Then the undirtoed image is warped back to original image using the inverse Persepctive transform matrix and merged with the color warped image
@@ -176,9 +176,9 @@ of the output shown below with Radious of Curvature and Offset displayed on the 
 
 ---
 
-### Pipeline (video)
+## Pipeline (video)
 
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 Here's a [project_video](./images/out_project_video.mp4) and
 
@@ -193,9 +193,9 @@ the unwarped images and saved to video file.
 
 ---
 
-### Discussion
+## Discussion
 
-#### 1. Summary of challenges and potential improvements:
+### 1. Summary of challenges and potential improvements:
 Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 While doing this project, I spent quite a bit of time to find the optimum tuning parameters for various functions like
