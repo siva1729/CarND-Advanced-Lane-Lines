@@ -49,7 +49,7 @@ To find lines in a given image and then to draw lines, each image has been proce
 
 To undistort the image have used the Camera calibration matrix and distortion coefficents calculated using camera calibration as decribed above.
 The distortion coefficients correct for the tangential and radial distortion effects that are caused by the real cameras.
-Real cameras use curved lenses to form an image, and light rays often bend a little too much or too little at the edges of these lenses. This creates an effect that distorts the edges of images, so that lines or objects appear more or less curved than they actually are. This is called tangential distortion. Another type of distortion, is tangential distortion. This occurs when a camera’s lens is not aligned perfectly parallel to the imaging plane, where the camera film or sensor is. This makes an image look tilted so that some objects appear farther away or closer than they actually are. 
+Real cameras use curved lenses to form an image, and light rays often bend a little too much or too little at the edges of these lenses. This creates an effect that distorts the edges of images, so that lines or objects appear more or less curved than they actually are. This is called tangential distortion. Another type of distortion, is radial distortion and this occurs when a camera’s lens is not aligned perfectly parallel to the imaging plane, where the camera film or sensor is. This makes an image look tilted so that some objects appear farther away or closer than they actually are. 
 Using the OpenCV function `cv2.undistort`, images have been undistorted and following example shows an undistorted image
 
 
